@@ -17,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
     {
         player.Animator.SetFloat("forward", player.Input.Movement.y);
         player.Animator.SetFloat("right", player.Input.Movement.x);
+
+        
     }
 
     private void FixedUpdate()
     {
-        Vector3 movement = transform.forward * player.Input.Movement.y * movementSpeed * Time.deltaTime 
+        Vector3 movement = transform.forward * player.Input.Movement.y * movementSpeed * Time.deltaTime
             + transform.right * player.Input.Movement.x * movementSpeed * Time.deltaTime;
         player.Rigidbody.Move(transform.position + movement, transform.rotation);
     }

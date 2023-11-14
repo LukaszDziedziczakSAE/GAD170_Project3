@@ -15,7 +15,7 @@ public class AutoDoor : MonoBehaviour
 
     private void Update()
     {
-        if (opening && timer < openTime)
+        if (opening)
         {
             timer += Time.deltaTime;
             if (timer >= openTime)
@@ -27,7 +27,7 @@ public class AutoDoor : MonoBehaviour
             door.transform.localPosition = new Vector3(0, doorPositionY, 0);
         }
 
-        else if (closing && timer < openTime)
+        else if (closing)
         {
             timer += Time.deltaTime;
             if (timer >= openTime)
@@ -54,12 +54,14 @@ public class AutoDoor : MonoBehaviour
 
     void StartUpMove()
     {
+        closing = false;
         opening = true;
         timer = 0;
     }
 
     void StartDownMove()
     {
+        opening = false;
         closing = true;
         timer = 0;
     }
