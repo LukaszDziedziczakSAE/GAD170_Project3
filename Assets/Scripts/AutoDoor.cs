@@ -42,13 +42,13 @@ public class AutoDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + " entered trigger");
+        Debug.Log(other.name + " entered door trigger");
         StartUpMove();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.name + " exited trigger");
+        Debug.Log(other.name + " exited door trigger");
         StartDownMove();
     }
 
