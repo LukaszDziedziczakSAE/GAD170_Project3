@@ -23,8 +23,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player.Input.Movement.y > 0 && player.Input.Movement.x == 0)
+        {
+            Vector3 rotation = transform.eulerAngles;
+            rotation.y = Camera.main.transform.eulerAngles.y;
+
+            player.Rigidbody.MoveRotation(Quaternion.Euler(rotation));
+        }
+
         Vector3 movement = transform.forward * player.Input.Movement.y * movementSpeed * Time.deltaTime
             + transform.right * player.Input.Movement.x * movementSpeed * Time.deltaTime;
-        player.Rigidbody.Move(transform.position + movement, transform.rotation);
+
+        player.Rigidbody.MovePosition(transform.position + movement);
+
+        
+
+
+        
     }
 }
