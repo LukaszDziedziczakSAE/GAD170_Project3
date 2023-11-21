@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [field: SerializeField] public Rigidbody Rigidbody { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public CinemachineFreeLook Camera { get; private set; }
+    [field: SerializeField] public SmokeBombThrower SmokeBombThrower { get; private set; }
+    [field: SerializeField] public Transform LeftHand { get; private set; }
+    [field: SerializeField] public Transform RightHand { get; private set; }
 
     private void Start()
     {
